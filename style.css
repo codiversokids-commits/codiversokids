@@ -1,0 +1,584 @@
+body {
+  margin: 0;
+  font-family: "DM Serif Display", serif;
+  background: #f5f7ff;
+}
+
+h1, h2, h3 {
+  font-family: "DM Serif Display", serif;
+}
+
+/* HEADER (NÃO ALTERADO) */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: linear-gradient(90deg, #6ec1ff, #8e44ad);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-area img {
+  width: 40px;
+  border-radius: 50%;
+  background: white;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.btn {
+  background: linear-gradient(90deg,  #98aafa, #fcfcfc);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 20px 20px;
+  background: linear-gradient(90deg, #6ec1ff, #8072e9);
+  color: white;
+}
+
+/* SECTIONS */
+section {
+  padding: 40px 20px;
+}
+
+/* 🎮 FUNDO GAMER */
+#cursos, #valores, #feedbacks {
+  background: radial-gradient(circle at center, #98aafa, #fcfcfc);
+  color: white;
+  position: relative;
+  overflow: hidden;
+  font-size: 25px;
+}
+
+/* ✨ ESTRELAS */
+#cursos::before,
+#valores::before,
+#feedbacks::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.1;
+  animation: estrelas 60s linear infinite;
+}
+
+@keyframes estrelas {
+  from { transform: translateY(0); }
+  to { transform: translateY(-500px); }
+}
+
+/* 🪐 LOGO FUNDO */
+.bg-logo {
+  position: absolute;
+  width: 900px;
+  max-width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.08;
+  z-index: 1;
+}
+
+/* CONTEÚDO NA FRENTE */
+#cursos h2,
+#cursos .carousel {
+  position: relative;
+  z-index: 2;
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background: #618ce9;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 0 15px #8e44ad;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #6ec1ff;
+}
+
+/* FEEDBACKS */
+.feedback-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.feedback-card {
+  background: #8daae9;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 0 15px #8e44ad;
+  transition: 0.3s;
+}
+
+.feedback-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #6ec1ff;
+}
+
+/* FORM */
+form {
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: linear-gradient(90deg,  #98aafa, #fcfcfc);
+}
+
+#agendamento{
+    background: linear-gradient(90deg,  #98aafa, #fcfcfc);
+}
+
+input, textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #9233eb;
+}
+
+button {
+  padding: 10px;
+  background: #8e44ad;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+  background: linear-gradient(90deg, #6ec1ff, #8e44ad);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* WHATSAPP */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  font-size: 20px;
+  padding: 15px;
+  border-radius: 50px;
+  text-decoration: none;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+}
+
+
+.dm-serif-display-regular {
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dm-serif-display-regular-italic {
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+#valores .cards {
+  position: relative;
+  z-index: 3; /* 🔥 NA FRENTE */
+}
+
+/* CAMADA */
+.flying {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* ITEM */
+.fly-item {
+  position: absolute;
+  font-size: 26px;
+  animation: fly-pro linear forwards;
+  opacity: 0.9;
+}
+
+/* RASTRO */
+.fly-item::after {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  width: 30px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #fff, transparent);
+  opacity: 0.7;
+  transform: translateY(-50%);
+  filter: blur(2px);
+}
+
+/* ANIMAÇÃO DIAGONAL */
+@keyframes fly-pro {
+  from {
+    transform: translate(-10vw, 0) rotate(0deg);
+  }
+  to {
+    transform: translate(110vw, -30vh) rotate(10deg);
+  }
+}
+
+.desconto {
+  color: #ffe066;
+  font-weight: bold;
+}
+
+/* ⭐ PLANO MAIS IMPORTANTE */
+.destaque {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px #f89a04;
+}
+
+
+.galeria-alunos {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; /* esquerda, centro, direita */
+  gap: 30px;
+  align-items: center;
+  justify-items: center;
+}
+
+.lado-esquerdo, .lado-direito {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.aluno-card {
+  text-align: center;
+  border: 3px solid #a600ff;
+  border-radius: 15px;
+  padding: 10px;
+  background: linear-gradient(#6ec1ff 50%, #8e44ad 50%);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+   transform: rotate(-10deg); /* inclinação para a esquerda */
+  transition: transform 0.3s
+}
+
+.aluno-nome {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.aluno-card:hover img {
+  transform: rotate(0deg) scale(1.05); /* volta ao normal e dá zoom */
+}
+
+.aluno-card:hover {
+  transform: scale(1.05);
+}
+
+.aluno-card img {
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.aluno-nome {
+  margin-top: 10px;
+  font-family: 'DM Serif Display', serif; /* fonte estilosa */
+  font-size: 1.2rem;
+  color: #fffbfb;
+}
+
+
+.cursos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.curso-card {
+  background: #f8f8f8;
+  border: 4px solid #8c00ff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.curso-card:hover {
+  transform: scale(1.05);
+}
+
+.curso-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.curso-card h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+  
+}
+
+.curso-card p {
+  font-size: 1rem;
+  color: #555;
+  text-align: justify;
+}
+
+
+.hero {
+  background: linear-gradient(135deg, #4a90e2, #9013fe);
+  color: white;
+  padding: 60px 20px;
+}
+
+.galeria-alunos {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; /* esquerda, centro, direita */
+  gap: 30px;
+  align-items: center;
+  justify-items: center;
+}
+
+.lado-direito {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hero-info {
+  text-align: center;
+  
+}
+
+.btn-cta{
+  background: linear-gradient(90deg, #4a90e2, #9013fe );
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid ;
+  border-color: #000000;
+  color: #ffffff;
+  font-family: 'DM Serif Display', serif;
+
+}
+
+.hero-info h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  font-family: 'DM Serif Display', serif;
+  color: #ffffff;
+  font-size: 50px;
+}
+
+.hero-info p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+p{
+  text-align: justify;
+}
+
+#sobre-nos {
+  background: linear-gradient(90deg, #6ec1ff, #d086ef);
+  color: white;
+  padding: 60px 20px;
+}
+
+.sobre-container {
+  display: flex;
+  flex-wrap: wrap; /* adapta em telas pequenas */
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.sobre-texto, .sobre-video {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+}
+
+.sobre-texto h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-family: 'DM Serif Display', serif;
+}
+
+.sobre-texto p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.redes-sociais {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon {
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.social-icon.instagram { background: #E1306C; }
+.social-icon.facebook { background: #1877F2; }
+.social-icon.youtube { background: #FF0000; }
+
+.social-icon:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+.sobre-video iframe {
+  width: 100%;
+  height: 315px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+/* ========================= */
+/* 📱 MOBILE (CELULAR) */
+/* ========================= */
+@media (max-width: 768px) {
+
+  /* HEADER */
+  header {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  nav {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  nav a {
+    font-size: 16px; /* antes estava 25px (muito grande) */
+  }
+
+  /* HERO */
+  .galeria-alunos {
+    grid-template-columns: 1fr; /* 🔥 empilha tudo */
+  }
+
+  .lado-esquerdo,
+  .lado-direito {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .aluno-card img {
+    width: 100px;
+    height: 130px;
+  }
+
+  .hero-info h1 {
+    font-size: 28px; /* 🔥 corrige o gigante */
+  }
+
+  .hero-info h3 {
+    font-size: 18px;
+  }
+
+  /* CURSOS */
+  .curso-card img {
+    height: 150px;
+  }
+
+  /* SOBRE */
+  .sobre-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sobre-texto p {
+    font-size: 1rem;
+  }
+
+  /* FORM */
+  form {
+    width: 100%;
+  }
+
+}
+
+/* ========================= */
+/* 📱 TABLET */
+/* ========================= */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .galeria-alunos {
+    grid-template-columns: 1fr; /* também empilha no tablet */
+  }
+
+  .hero-info h1 {
+    font-size: 36px;
+  }
+
+}
